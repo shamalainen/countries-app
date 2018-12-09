@@ -10,8 +10,9 @@ $gray: #5c5c5c;
 $gray-dark: #363636;
 
 $white: #ffffff;
-$white-light: #f8f8f8;
+$white-light: #fafafa;
 $white-dark: #d9d9d9;
+$gray-light: #f2f2f2;
 
 $yellow: #ffd300;
 $yellow-bright: #ffd600;
@@ -21,7 +22,7 @@ $blue: #2267ff;
 $purple: #89509a;
 
 $body-color: $black;
-$body-background: $white;
+$body-background: $gray-light;
 
 $link-color: $blue;
 $link-color-hover: darken($blue, 20%);

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Country } from './';
 
+// https://www.google.com/maps?q=38.6531004,-90.243462&ll=38.6531004,-90.243462&z=4
+
 const API = 'https://restcountries.eu/rest/v2/all';
 
 class Countries extends Component {
@@ -35,6 +37,7 @@ class Countries extends Component {
             countryFlag={i.flag}
             countryLanguages={i.languages}
             countryPopulation={i.population}
+            countryLatLan={i.latlng}
           />
         ))}
       </div>

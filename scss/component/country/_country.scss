@@ -77,6 +77,11 @@
   text-transform: uppercase;
 }
 
+.country__content {
+  display: flex;
+  flex-direction: column;
+}
+
 .country__content-section {
   padding: 1.5rem;
 
@@ -85,12 +90,37 @@
   }
 }
 
+.country__content-section--hax {
+  min-height: 165px;
+}
+
 .country__content-section--blue {
   color: $white;
   background-color: #0a89fb;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
 }
 
-.country__content-section--side-by-side {
+.country__content-section--green {
+  color: $white;
+  background-color: $green;
+
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+a.country__content-section--green {
+  &:hover {
+    background-color: darken($green, 5);
+  }
+}
+
+.country__content-section--center {
   display: flex;
   align-items: center;
   justify-content: center;

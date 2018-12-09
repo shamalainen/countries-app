@@ -1,7 +1,15 @@
+.page-title {
+  text-align: center;
+  margin: 4rem 0;
+
+  @include medium-wide {
+    @include font-size(70px);
+  }
+}
+
 .countries-list {
   display: flex;
   flex-direction: column;
-  padding-top: 4rem;
 
   @include medium-wide {
     justify-content: space-between;

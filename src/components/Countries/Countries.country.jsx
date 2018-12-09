@@ -9,6 +9,7 @@ export const Country = ({
   countryFlag,
   countryLanguages,
   countryPopulation,
+  countryLatLan,
 }) => (
   <div className="country">
     <div className="country__header">
@@ -22,24 +23,36 @@ export const Country = ({
       <h3 className="country__region">{countrySubRegion || countryRegion}</h3>
     </div>
     <div className="country__content">
-      <div className="country__content-section country__content-section--blue country__content-section--side-by-side">
+      <div className="country__content-section country__content-section--blue country__content-section--center">
         <i className="fas fa-users" />
         <p className="country__population">
           {countryPopulation.toLocaleString()}
         </p>
       </div>
-      <div className="country__content-section">
+      <div className="country__content-section country__content-section--hax">
         <h4 className="country__subheading">
           {countryLanguages.length === 1
             ? 'Official Language'
             : 'Official Languages'}
         </h4>
+        {console.log(countryLatLan)}
         <ul className="country__languages">
           {countryLanguages.map(i => (
-            <li className="country__languages-item">{i.name}</li>
+            <li key={i.name} className="country__languages-item">
+              {i.name}
+            </li>
           ))}
         </ul>
       </div>
+      <a
+        href={`https://www.google.com/maps?q=${countryLatLan[0]},${
+          countryLatLan[1]
+        }&ll=${countryLatLan[0]},${countryLatLan[1]}&z=5`}
+        target="_blank"
+        className="country__content-section country__content-section--green country__content-section--center"
+      >
+        <i className="fas fa-globe-americas" />
+      </a>
     </div>
   </div>
 );
@@ -57,4 +70,6 @@ Country.propTypes = {
   countryLanguages: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string]))
     .isRequired,
   countryPopulation: PropTypes.number.isRequired,
+  countryLatLan: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string]))
+    .isRequired,
 };

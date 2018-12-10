@@ -2,6 +2,8 @@
 
 Lists all countries of the Globe also you can search for a specific country.
 
+![alt text](https://user-images.githubusercontent.com/22739952/49735531-1ace0680-fc90-11e8-80fa-781598126aff.png)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.

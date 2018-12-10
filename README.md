@@ -31,7 +31,7 @@ npm start
 
 ## Built With
 
-- [React](https://reactjs.org/) - The web framework used
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [REST Countries](https://restcountries.eu/) - Get information about countries via a RESTful API
 
 ## Authors

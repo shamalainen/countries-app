@@ -37,3 +37,4 @@ npm start
 ## Authors
 
 - **Sebastian Hämäläinen** - [shamalainen](https://github.com/shamalainen)
+- **Teemu Sillantaus** - [silte](https://github.com/silte)

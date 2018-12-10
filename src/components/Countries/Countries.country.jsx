@@ -58,8 +58,9 @@ Country.propTypes = {
   region: PropTypes.string.isRequired,
   subregion: PropTypes.string,
   flag: PropTypes.string.isRequired,
-  languages: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string]))
-    .isRequired,
+  languages: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+  })).isRequired,
   population: PropTypes.number.isRequired,
   latlng: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number])).isRequired,
 };

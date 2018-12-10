@@ -35,7 +35,6 @@ export const Country = ({
             ? 'Official Language'
             : 'Official Languages'}
         </h4>
-        {console.log(countryLatLan)}
         <ul className="country__languages">
           {countryLanguages.map(i => (
             <li key={i.name} className="country__languages-item">
@@ -70,6 +69,6 @@ Country.propTypes = {
   countryLanguages: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string]))
     .isRequired,
   countryPopulation: PropTypes.number.isRequired,
-  countryLatLan: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string]))
+  countryLatLan: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number]))
     .isRequired,
 };

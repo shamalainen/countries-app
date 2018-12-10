@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { Country } from './';
 
-// https://www.google.com/maps?q=38.6531004,-90.243462&ll=38.6531004,-90.243462&z=4
-
 const API = 'https://restcountries.eu/rest/v2/all';
 
 class Countries extends Component {
@@ -13,6 +11,7 @@ class Countries extends Component {
 
     this.state = {
       countries: [],
+      search: '',
     };
   }
 
@@ -22,24 +21,37 @@ class Countries extends Component {
       .then(countries => this.setState({ countries }));
   }
 
+  handleChange = (e) => {
+    this.setState(prevState => ({ ...prevState, search: e }));
+  };
+
   render() {
-    const { countries } = this.state;
+    const { countries, search } = this.state;
 
     return (
-      <div className="countries-list container container--inset">
-        {countries.map(i => (
-          <Country
-            key={i.alpha3Code}
-            countryName={i.name}
-            countryCapital={i.capital}
-            countryRegion={i.region}
-            countrySubRegion={i.subregion}
-            countryFlag={i.flag}
-            countryLanguages={i.languages}
-            countryPopulation={i.population}
-            countryLatLan={i.latlng}
-          />
-        ))}
+      <div className="container container--inset">
+        <input
+          type="text"
+          name="search"
+          onChange={e => this.handleChange(e.target.value)}
+        />
+        <div className="countries-list">
+          {countries
+            .filter(i => i.name.toLowerCase().includes(search.toLowerCase()))
+            .map(i => (
+              <Country
+                key={i.alpha3Code}
+                countryName={i.name}
+                countryCapital={i.capital}
+                countryRegion={i.region}
+                countrySubRegion={i.subregion}
+                countryFlag={i.flag}
+                countryLanguages={i.languages}
+                countryPopulation={i.population}
+                countryLatLan={i.latlng}
+              />
+            ))}
+        </div>
       </div>
     );
   }

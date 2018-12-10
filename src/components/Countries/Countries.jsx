@@ -39,17 +39,7 @@ class Countries extends Component {
           {countries
             .filter(i => i.name.toLowerCase().includes(search.toLowerCase()))
             .map(i => (
-              <Country
-                key={i.alpha3Code}
-                countryName={i.name}
-                countryCapital={i.capital}
-                countryRegion={i.region}
-                countrySubRegion={i.subregion}
-                countryFlag={i.flag}
-                countryLanguages={i.languages}
-                countryPopulation={i.population}
-                countryLatLan={i.latlng}
-              />
+              <Country key={i.alpha3Code} {...i} />
             ))}
         </div>
       </div>

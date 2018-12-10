@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import { Country } from './';
 
@@ -29,20 +29,23 @@ class Countries extends Component {
     const { countries, search } = this.state;
 
     return (
-      <div className="container container--inset">
-        <input
-          type="text"
-          name="search"
-          onChange={e => this.handleChange(e.target.value)}
-        />
-        <div className="countries-list">
+      <Fragment>
+        <div className="container container--inset">
+          <input
+            className="countries-search"
+            type="text"
+            name="search"
+            onChange={e => this.handleChange(e.target.value)}
+          />
+        </div>
+        <div className="countries-list container--inset">
           {countries
             .filter(i => i.name.toLowerCase().includes(search.toLowerCase()))
             .map(i => (
               <Country key={i.alpha3Code} {...i} />
             ))}
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

@@ -1,23 +1,20 @@
 .country {
   background-color: $white-light;
-  width: 100%;
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid #e5e5e5;
   box-shadow: 0 2px 4px rgba($black, 0.08);
+  margin-bottom: 2rem;
+  flex: 1 0 100%;
 
-  &:not(:first-child) {
-    margin-top: 2rem;
+  @include small {
+    flex: 1 0 400px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
 
-  &:nth-child(2) {
-    @include medium-wide {
-      margin-top: 0;
-    }
-  }
-
-  @include medium-wide {
-    width: calc(100% / 2 - 1rem);
+  @media screen and (min-width: 1090px) {
+    flex: 1 0 500px;
   }
 }
 

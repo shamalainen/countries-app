@@ -8,12 +8,19 @@
 }
 
 .countries-list {
+  max-width: 2530px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
 
-  @include medium-wide {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
+  @include small {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
+  @media screen and (min-width: 1090px) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

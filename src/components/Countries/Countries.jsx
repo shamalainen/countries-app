@@ -25,6 +25,9 @@ class Countries extends Component {
     this.setState(prevState => ({ ...prevState, search: e }));
   };
 
+  filterCondition = (filter, target) =>
+    target.some(i => i.toLowerCase().includes(filter.toLowerCase()));
+
   render() {
     const { countries, search } = this.state;
 
@@ -43,7 +46,7 @@ class Countries extends Component {
         </div>
         <div className="countries-list container--inset">
           {countries
-            .filter(i => i.name.toLowerCase().includes(search.toLowerCase()))
+            .filter(i => this.filterCondition(search, [i.name, i.nativeName]))
             .map(i => (
               <Country key={i.alpha3Code} {...i} />
             ))}

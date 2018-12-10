@@ -31,6 +31,9 @@ class Countries extends Component {
     return (
       <Fragment>
         <div className="container container--inset">
+          <label className="countries-search-label" htmlFor="search">
+            Search for country...
+          </label>
           <input
             className="countries-search"
             type="text"

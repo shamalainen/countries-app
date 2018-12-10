@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { List } from 'react-content-loader';
 
 import { Country } from './';
 
@@ -12,6 +13,7 @@ class Countries extends Component {
     this.state = {
       countries: [],
       search: '',
+      loading: true,
     };
   }
 
@@ -29,7 +31,7 @@ class Countries extends Component {
     target.some(i => i.toLowerCase().includes(filter.toLowerCase()));
 
   render() {
-    const { countries, search } = this.state;
+    const { countries, search, loading } = this.state;
 
     return (
       <Fragment>
@@ -47,9 +49,7 @@ class Countries extends Component {
         <div className="countries-list container--inset">
           {countries
             .filter(i => this.filterCondition(search, [i.name, i.nativeName]))
-            .map(i => (
-              <Country key={i.alpha3Code} {...i} />
-            ))}
+            .map(i => (loading ? <List /> : <Country key={i.alpha3Code} {...i} />))}
         </div>
       </Fragment>
     );
